@@ -28,7 +28,7 @@ class UpdateFeaturedPets extends Command
     public function handle()
     {
         // Use the correct path to Python and your script
-        $pythonPath = 'C:\Users\jonas\AppData\Local\Programs\Python\Python313\python.exe';
+        $pythonPath = "C:\Users\charl\AppData\Local\Programs\Python\Python313\python.exe";
         $scriptPath = base_path('scripts/ml/prediction_script.py');
 
         // Verify the script exists
@@ -63,7 +63,7 @@ class UpdateFeaturedPets extends Command
     protected function schedule(Schedule $schedule)
     {
         // Run the command monthly on the first day of the month at midnight
-        $schedule->command('app:update-featured-pets')->everySecond();
+        $schedule->command('app:update-featured-pets')->everyHour();
 
         // Alternatively, you could specify a specific day and time like this:
         // $schedule->command('app:update-featured-pets')->monthlyOn(1, '00:00');
